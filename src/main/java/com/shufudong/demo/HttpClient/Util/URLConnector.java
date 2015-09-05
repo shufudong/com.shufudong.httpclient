@@ -51,7 +51,8 @@ public class URLConnector {
     }
 
     public static URLConnection openConnection(URL url, int timeout) throws IOException {
-        return openConnection(url, timeout);
+        URLConnector uc = new URLConnector(url);
+        return uc.openConnection(timeout);
     }
 
     private class URLConnectorThread implements Runnable {
